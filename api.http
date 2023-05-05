@@ -1,0 +1,9 @@
+POST http://0.0.0.0:3333/users
+Content-Type: application/json
+
+{
+	"name": "Matdasdasds Fontelesasd",
+	"email": "12asdasd3@hotmail.com",
+	"password": "matheasdasdldas"
+}
+
