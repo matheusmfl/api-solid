@@ -8,7 +8,7 @@ export class PrismaUsersRepository implements UsersRepository {
       where: { email },
     })
 
-    return user || null
+    return user
   }
 
   async create(data: Prisma.UserCreateInput) {
