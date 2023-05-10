@@ -1,9 +1,8 @@
-POST http://0.0.0.0:3333/users
+POST http://0.0.0.0:3333/sessions
 Content-Type: application/json
 
 {
-	"name": "Matdasdasds Fontelesasd",
-	"email": "12asdasda13a@hotmaail.com",
-	"password": "matheasdasdldas"
+	"email": "matheusass@hotmaail.com",
+	"password": "matheasdasdldaas"
 }
 
