@@ -14,5 +14,4 @@ export class InMemoryGymsRepository implements GymsRepository {
     return gym
   }
 
-
 }
