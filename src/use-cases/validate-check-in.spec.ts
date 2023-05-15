@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-in-repositoriy'
 import { ValidateCheckInUseCase } from './validate-check-ins'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
+import { LateCheckInValidationError } from './errors/late-check-in-validation-error'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let sut: ValidateCheckInUseCase
@@ -13,14 +14,7 @@ describe('Validate Check-in Use Case', () => {
     sut = new ValidateCheckInUseCase(checkInsRepository)
 
 
-    // await gymsRepository.create({
-    //   id: 'jhoasdasdaadan@gmail.com',
-    //   title: 'Javascript Gym',
-    //   description: '',
-    //   phone: '',
-    //   latitude: new Decimal(0),
-    //   longitude: new Decimal(0)
-    // })
+
     vi.useFakeTimers()
   })
 
@@ -68,7 +62,7 @@ describe('Validate Check-in Use Case', () => {
       sut.execute({
         checkInId: createdCheckIn.id,
       })
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toBeInstanceOf(LateCheckInValidationError)
   })
 
 })
