@@ -1,8 +1,22 @@
-POST http://0.0.0.0:3333/sessions
+###
+POST http://127.0.0.1:3333/users
 Content-Type: application/json
 
 {
-	"email": "matheusass@hotmaail.com",
-	"password": "matheasdasdldaas"
+  "name" : "Alan",
+  "email": "contato.alanjunqueira@gmail.com",
+  "password": "password"
 }
 
+###
+POST http://127.0.0.1:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "contato.alanjunqueira@gmail.com",
+  "password": "password"
+}
+
+###
+GET http://127.0.0.1:3333/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3Mjg2MWE4NC1hZTk0LTQ0ZmItYjZkOC0yZTM5N2Q3NzhmNzUiLCJpYXQiOjE2ODQ1MzA5MDd9.bE8swfdVsEnkwFO5GeDSVSU7eGnEnzkF9oQRD0TsfrE
